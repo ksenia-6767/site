@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача</title>
+    <style> 
+        a:link {color: #1a0804;}
+        a:visited {color: #ad9b8a;}
+        a:hover {color: #906951;}
+    </style>
+</head>
+
+<body id="top" style="background-color: rgb(209, 197, 168); color: rgb(43, 19, 4);  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+ <nav>
+        <a href="index.html"><b>Главная</b></a> |
+        <a href="sincerity.html">Продажа эмоций и нематериальных ценностей</a> |
+        <a href="exchange.html">Тактильный, визуальный и ароматический триггеринг</a> |
+        <a href="deficit.html">Искусственная цикличность и микросезонность</a> |
+        <a href="practice.html"> Опрос</a> |
+        <a href="DOM_JS.html">DOM_JS</a> |
+        <a href="latin.html">Латиница</a> |
+        <a href="task.html">Задача</a> |
+        <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Внешний источник</a>
+    </nav>
+<body>
+
+<h1>Задача</h1>
+
+<p>Имеются две ёмкости: кубическая с ребром A,
+цилиндрическая с высотой H и радиусом R.
+Определить, можно ли заполнить жидкостью объёма M
+первую ёмкость, вторую, обе.</p>
+
+<form>
+    <p>A: <input id="A" type="number"></p>
+
+    <p>H: <input id="H" type="number"></p>
+
+    <p>R: <input id="R" type="number"></p>
+
+    <p>M: <input id="M" type="number"></p>
+
+    <p>Результат:
+        <input id="result" type="text">
+    </p>
+
+    <input type="button" value="Проверить" onclick="check()">
+</form>
+
+<script>
+function check() {
+    let A = Number(document.getElementById("A").value);
+    let H = Number(document.getElementById("H").value);
+    let R = Number(document.getElementById("R").value);
+    let M = Number(document.getElementById("M").value);
+
+    let V1 = A * A * A;
+    let V2 = 3.14 * R * R * H;
+
+    if (M >= V1 && M >= V2) {
+        document.getElementById("result").value = "Можно заполнить обе";
+    } else if (M >= V1) {
+        document.getElementById("result").value = "Можно заполнить первую";
+    } else if (M >= V2) {
+        document.getElementById("result").value = "Можно заполнить вторую";
+    } else {
+        document.getElementById("result").value = "Нельзя заполнить ни одну";
+    }
+}
+</script>
+
+</body>
+</html>
